@@ -1,5 +1,5 @@
 import { Inter } from '@next/font/google';
-import Login from '@/pages/login';
+import Login from '@/pages/Login';
 
 const inter = Inter({ subsets: ['latin'] });
 
