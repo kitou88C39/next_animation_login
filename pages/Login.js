@@ -19,7 +19,11 @@ export default function Login() {
                 placeholder=''
                 className='relative z-10 h-10 px-2 text-gray-100 bg-transparent border-0 border-b-2 outline-none border-lime-400 peer'
               />
-              <label className='mb-12 text-xl font-semibold text-center text-lime-400'>
+              <label
+                className='peer-focus:font-medium absolute text-sm  duration-500 transform -translate-y-8 scale-75  
+              top-3 left-0 -z-10 origin-[0] peer-focus:left-0 peer-focus:text-lime-400 text-lime-400 peer-placeholder-shown:scale-100
+              peer-placeholder-shown:translate-y-0 peer-placeholder-shown:text-gray-500 peer-focus:scale-75 peer-focus:-translate-y-8'
+              >
                 Enter Email
               </label>
             </div>
