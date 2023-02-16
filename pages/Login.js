@@ -17,7 +17,7 @@ export default function Login() {
             <h2 className='mb-12 text-xl font-semibold text-center text-lime-400'>
               Sign In
             </h2>
-            <div className='relative flex flex-col'>
+            <div className='relative flex flex-col mb-12'>
               <input
                 type='email'
                 id='email'
@@ -27,6 +27,7 @@ export default function Login() {
                 {...register('email', {
                   required: 'please enter email',
                   pattern: {
+                    //value:バリデーション
                     message: 'Please enter vaild email',
                   },
                 })}
@@ -46,6 +47,38 @@ export default function Login() {
               peer-placeholder-shown:translate-y-0 peer-placeholder-shown:text-gray-500 peer-focus:scale-75 peer-focus:-translate-y-8'
               >
                 Enter Email
+              </label>
+            </div>
+            <div className='relative flex flex-col mb-12'>
+              <input
+                type='password'
+                id='password'
+                autoFocus
+                placeholder=''
+                className='relative z-10 h-10 px-2 text-gray-100 bg-transparent border-0 border-b-2 outline-none border-lime-400 peer'
+                {...register('password', {
+                  required: 'please enter password',
+                  pattern: {
+                    //value:バリデーション
+                    message: 'Please enter vaild password',
+                  },
+                })}
+              />
+              {error.password && (
+                <div className='text-xs text-red-500 absolute-bottom-5'>
+                  {errors.password.message}
+                </div>
+              )}
+              <i
+                className='absolute bottom-0 left-0 w-full h-10 duration-500 origin-bottom transform rounded bg-lime-400 -z-10
+              peer-focus:h-10 placeholder-shown:h-[0.5px]'
+              />
+              <label
+                className='peer-focus:font-medium absolute text-sm  duration-500 transform -translate-y-8 scale-75  
+              top-3 left-0 -z-10 origin-[0] peer-focus:left-0 peer-focus:text-lime-400 text-lime-400 peer-placeholder-shown:scale-100
+              peer-placeholder-shown:translate-y-0 peer-placeholder-shown:text-gray-500 peer-focus:scale-75 peer-focus:-translate-y-8'
+              >
+                Enter Password
               </label>
             </div>
             <button
