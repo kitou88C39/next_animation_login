@@ -24,13 +24,18 @@ export default function Login() {
                 autoFocus
                 placeholder=''
                 className='relative z-10 h-10 px-2 text-gray-100 bg-transparent border-0 border-b-2 outline-none border-lime-400 peer'
-                {...register('email'), {
-                  required:"please enter email",
-                  pattern:{
-                    message:"Please enter vaild email" 
-                  }
-                }}
+                {...register('email', {
+                  required: 'please enter email',
+                  pattern: {
+                    message: 'Please enter vaild email',
+                  },
+                })}
               />
+              {error.email && (
+                <div className='text-xs text-red-500 absolute-bottom-5'>
+                  {errors.email.message}
+                </div>
+              )}
               <i
                 className='absolute bottom-0 left-0 w-full h-10 duration-500 origin-bottom transform rounded bg-lime-400 -z-10
               peer-focus:h-10 placeholder-shown:h-[0.5px]'
@@ -43,6 +48,12 @@ export default function Login() {
                 Enter Email
               </label>
             </div>
+            <button
+              type='submit'
+              className='w-full py-3 text-gray-100 duration-300 rounded bg-lime-400 hover:bg-lime-400 hover-scale-105'
+            >
+              Login
+            </button>
           </form>
         </div>
       </div>
